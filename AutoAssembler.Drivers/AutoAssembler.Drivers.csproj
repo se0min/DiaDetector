@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B6A4FBD-3C4B-4F2B-90A4-06E6EF95E5BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoAssembler.Drivers</RootNamespace>
+    <AssemblyName>AutoAssembler.Drivers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmPowerDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPowerDown.Designer.cs">
+      <DependentUpon>frmPowerDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAIX\MultiMotion.cs" />
+    <Compile Include="DeviceManager.cs" />
+    <Compile Include="frmDeviceSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeviceSetting.Designer.cs">
+      <DependentUpon>frmDeviceSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialPortManager.cs" />
+    <Compile Include="SettingDataInfo.cs" />
+    <Compile Include="Temp\frmDIOConnectionSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\frmDIOConnectionSetting.Designer.cs">
+      <DependentUpon>frmDIOConnectionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\frmMotionConnectionSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\frmMotionConnectionSetting.Designer.cs">
+      <DependentUpon>frmMotionConnectionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAIX\PaixMotion.cs" />
+    <Compile Include="PAIX\nmc2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoAssembler.Data\AutoAssembler.Data.csproj">
+      <Project>{1f9c994c-c254-4b56-9144-d56bdaaf83e4}</Project>
+      <Name>AutoAssembler.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoAssembler.Utilities\AutoAssembler.Utilities.csproj">
+      <Project>{5f7f8cfc-c3b2-44f6-8633-b8e9fa2f2f14}</Project>
+      <Name>AutoAssembler.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmDeviceSetting.resx">
+      <DependentUpon>frmDeviceSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPowerDown.resx">
+      <DependentUpon>frmPowerDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\frmDIOConnectionSetting.resx">
+      <DependentUpon>frmDIOConnectionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\frmMotionConnectionSetting.resx">
+      <DependentUpon>frmMotionConnectionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CamAnalyzer\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

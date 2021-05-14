@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D00E8F24-C5E8-445C-83F4-55C4E3C98CCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoAssembler</RootNamespace>
+    <AssemblyName>AutoAssembler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\KSM\AutoAssembler\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\..\..\..\KSM\AutoAssembler\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VBT-816.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XCCamDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\KSM\AutoAssembler\XCCamDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editor\frmEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\frmEditor.Designer.cs">
+      <DependentUpon>frmEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Setting\frmCameraSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Setting\frmCameraSetting.Designer.cs">
+      <DependentUpon>frmCameraSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Setting\frmMotionSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Setting\frmMotionSetting.Designer.cs">
+      <DependentUpon>frmMotionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncDelay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncDelay.Designer.cs">
+      <DependentUpon>frmFuncDelay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncDIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncDIO.Designer.cs">
+      <DependentUpon>frmFuncDIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncIndex.Designer.cs">
+      <DependentUpon>frmFuncIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncLamp.Designer.cs">
+      <DependentUpon>frmFuncLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncCamUnitMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncCamUnitMove.Designer.cs">
+      <DependentUpon>frmFuncCamUnitMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Setting\frmLightingSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Setting\frmLightingSetting.Designer.cs">
+      <DependentUpon>frmLightingSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Setting\frmDIOSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Setting\frmDIOSetting.Designer.cs">
+      <DependentUpon>frmDIOSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncRolling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncRolling.Designer.cs">
+      <DependentUpon>frmFuncRolling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncBackCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncBackCam.Designer.cs">
+      <DependentUpon>frmFuncBackCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncVBlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncVBlock.Designer.cs">
+      <DependentUpon>frmFuncVBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncGantry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncGantry.Designer.cs">
+      <DependentUpon>frmFuncGantry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncRollingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncRollingUI.Designer.cs">
+      <DependentUpon>frmFuncRollingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncWelding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncWelding.Designer.cs">
+      <DependentUpon>frmFuncWelding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncAxisMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Function\frmFuncAxisMove.Designer.cs">
+      <DependentUpon>frmFuncAxisMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\frmRecognizeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\frmRecognizeSet.Designer.cs">
+      <DependentUpon>frmRecognizeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reco\frmLevelAlign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reco\frmLevelAlign.Designer.cs">
+      <DependentUpon>frmLevelAlign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\frmJogAxis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\frmJogAxis.Designer.cs">
+      <DependentUpon>frmJogAxis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\frmReturnHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\frmReturnHome.Designer.cs">
+      <DependentUpon>frmReturnHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\frmSelectRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New\frmSelectRun.Designer.cs">
+      <DependentUpon>frmSelectRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reco\frmCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reco\frmCalibration.Designer.cs">
+      <DependentUpon>frmCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reco\frmEFControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reco\frmEFControl.Designer.cs">
+      <DependentUpon>frmEFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reco\frmMonitorCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reco\frmMonitorCam.Designer.cs">
+      <DependentUpon>frmMonitorCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reco\frmReco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reco\frmReco.Designer.cs">
+      <DependentUpon>frmReco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame.Designer.cs">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reco\clsLamp.cs" />
+    <Compile Include="New\WorkHistory.cs" />
+    <EmbeddedResource Include="Editor\Function\frmFuncAxisMove.resx">
+      <DependentUpon>frmFuncAxisMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncBackCam.resx">
+      <DependentUpon>frmFuncBackCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncGantry.resx">
+      <DependentUpon>frmFuncGantry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncRolling.resx">
+      <DependentUpon>frmFuncRolling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncRollingUI.resx">
+      <DependentUpon>frmFuncRollingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncWelding.resx">
+      <DependentUpon>frmFuncWelding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Setting\frmCameraSetting.resx">
+      <DependentUpon>frmCameraSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Setting\frmMotionSetting.resx">
+      <DependentUpon>frmMotionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncDIO.resx">
+      <DependentUpon>frmFuncDIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncIndex.resx">
+      <DependentUpon>frmFuncIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncLamp.resx">
+      <DependentUpon>frmFuncLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncCamUnitMove.resx">
+      <DependentUpon>frmFuncCamUnitMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Setting\frmLightingSetting.resx">
+      <DependentUpon>frmLightingSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncDelay.resx">
+      <DependentUpon>frmFuncDelay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\frmEditor.resx">
+      <DependentUpon>frmEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Setting\frmDIOSetting.resx">
+      <DependentUpon>frmDIOSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Function\frmFuncVBlock.resx">
+      <DependentUpon>frmFuncVBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\frmRecognizeSet.resx">
+      <DependentUpon>frmRecognizeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reco\frmLevelAlign.resx">
+      <DependentUpon>frmLevelAlign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\frmJogAxis.resx">
+      <DependentUpon>frmJogAxis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\frmReturnHome.resx">
+      <DependentUpon>frmReturnHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\frmSelectRun.resx">
+      <DependentUpon>frmSelectRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reco\frmCalibration.resx">
+      <DependentUpon>frmCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reco\frmEFControl.resx">
+      <DependentUpon>frmEFControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reco\frmMonitorCam.resx">
+      <DependentUpon>frmMonitorCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reco\frmReco.resx">
+      <DependentUpon>frmReco.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame.resx">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoAssembler.Data\AutoAssembler.Data.csproj">
+      <Project>{1f9c994c-c254-4b56-9144-d56bdaaf83e4}</Project>
+      <Name>AutoAssembler.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoAssembler.Drivers\AutoAssembler.Drivers.csproj">
+      <Project>{2b6a4fbd-3c4b-4f2b-90a4-06e6ef95e5bb}</Project>
+      <Name>AutoAssembler.Drivers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoAssembler.Utilities\AutoAssembler.Utilities.csproj">
+      <Project>{5f7f8cfc-c3b2-44f6-8633-b8e9fa2f2f14}</Project>
+      <Name>AutoAssembler.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoAssembler.VisionLibrary\AutoAssembler.VisionLibrary.csproj">
+      <Project>{fafefcaf-5f83-44e0-a50b-7db213936ee6}</Project>
+      <Name>AutoAssembler.VisionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calibration_btn.jpg" />
+    <None Include="Resources\MainFrame2.bmp" />
+    <None Include="Resources\btnCountReset.bmp" />
+    <None Include="Resources\btnJog.bmp" />
+    <None Include="Resources\MainFrame7.bmp" />
+    <Content Include="VBT-816.ico" />
+    <None Include="Resources\롤링 마스터.PNG" />
+    <None Include="Resources\title2.png" />
+    <None Include="Resources\CAM_Trigger.png" />
+    <None Include="Resources\btn_jQueryUI_100_40.png" />
+    <None Include="Resources\btnModelSelect.png" />
+    <None Include="Resources\btnCountReset.png" />
+    <None Include="Resources\btnTestStart.png" />
+    <None Include="Resources\btnTestStop.png" />
+    <None Include="Resources\btnTestEditor.png" />
+    <None Include="Resources\btnTestSetting.png" />
+    <Content Include="Resources\edit_bt.jpg" />
+    <None Include="Resources\edit_bt1.jpg" />
+    <None Include="Resources\MainFrame.png" />
+    <None Include="Resources\MainFrame1.png" />
+    <None Include="Resources\MainFrame2.png" />
+    <None Include="Resources\MainFrame3.png" />
+    <None Include="Resources\MainFrame4.png" />
+    <Content Include="Resources\model_edit_bt.jpg" />
+    <None Include="Resources\setting_bt1.jpg" />
+    <None Include="Resources\test_ok1.jpg" />
+    <None Include="Resources\test_stop_bt1.jpg" />
+    <None Include="Resources\test_start_bt1.jpg" />
+    <None Include="Resources\model_edit_bt1.jpg" />
+    <Content Include="Resources\play_bt.jpg" />
+    <Content Include="Resources\setting_bt.jpg" />
+    <Content Include="Resources\stop_bt.jpg" />
+    <Content Include="Resources\test_ng.jpg" />
+    <Content Include="Resources\test_ok.jpg" />
+    <Content Include="Resources\test_start_bt.jpg" />
+    <Content Include="Resources\test_stop_bt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

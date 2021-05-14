@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42F06D04-C50C-4476-BDBF-8EEE100370EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiaDetector.Data</RootNamespace>
+    <AssemblyName>DiaDetector.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\DiaDetector\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\DiaDetector\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\frmModelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmModelList.Designer.cs">
+      <DependentUpon>frmModelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmModelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmModelSetting.Designer.cs">
+      <DependentUpon>frmModelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmNewModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmNewModel.Designer.cs">
+      <DependentUpon>frmNewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmPassWord.Designer.cs">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmSharedPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmSharedPW.Designer.cs">
+      <DependentUpon>frmSharedPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelListInfo.cs" />
+    <Compile Include="SettingInfo\CameraSettingInfo.cs" />
+    <Compile Include="ConfigManager.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="SettingInfo\DIOSettingInfo.cs" />
+    <Compile Include="SettingInfo\LightingSettingInfo.cs" />
+    <Compile Include="SettingInfo\MotionSettingInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\frmModelList.resx">
+      <DependentUpon>frmModelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmModelSetting.resx">
+      <DependentUpon>frmModelSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmNewModel.resx">
+      <DependentUpon>frmNewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmPassWord.resx">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmSharedPW.resx">
+      <DependentUpon>frmSharedPW.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

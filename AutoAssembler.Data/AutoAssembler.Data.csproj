@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F9C994C-C254-4B56-9144-D56BDAAF83E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoAssembler.Data</RootNamespace>
+    <AssemblyName>AutoAssembler.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\KSM\AutoAssembler\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\KSM\AutoAssembler\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\frmPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmPassWord.Designer.cs">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmSharedPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmSharedPW.Designer.cs">
+      <DependentUpon>frmSharedPW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelListInfo.cs" />
+    <Compile Include="Model\WorkFuncInfo.cs" />
+    <Compile Include="Model\frmModelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmModelList.Designer.cs">
+      <DependentUpon>frmModelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmModelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmModelSetting.Designer.cs">
+      <DependentUpon>frmModelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmNewModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmNewModel.Designer.cs">
+      <DependentUpon>frmNewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingInfo\CameraSettingInfo.cs" />
+    <Compile Include="SettingInfo\LightingSettingInfo.cs" />
+    <Compile Include="SettingInfo\MotionSettingInfo.cs" />
+    <Compile Include="SettingInfo\DIOSettingInfo.cs" />
+    <Compile Include="Model\TestProcessInfo.cs" />
+    <Compile Include="ConfigManager.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\frmPassWord.resx">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmModelList.resx">
+      <DependentUpon>frmModelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmModelSetting.resx">
+      <DependentUpon>frmModelSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmNewModel.resx">
+      <DependentUpon>frmNewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmSharedPW.resx">
+      <DependentUpon>frmSharedPW.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoAssembler.VisionLibrary\AutoAssembler.VisionLibrary.csproj">
+      <Project>{fafefcaf-5f83-44e0-a50b-7db213936ee6}</Project>
+      <Name>AutoAssembler.VisionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
